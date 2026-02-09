@@ -25,3 +25,8 @@ target
 
 /target
 
+.env
+*.log
+/target
+/models/*.onnx
+/qdrant_storage/*

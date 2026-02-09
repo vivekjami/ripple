@@ -1,6 +1,24 @@
 [package]
 name = "ripple"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+authors = ["Vivek Jami <vivek@example.com>"]
+description = "High-Performance Semantic Caching Proxy for API Cost Reduction"
+license = "MIT"
 
 [dependencies]
+tokio = { version = "1.49.0", features = ["full"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+
+[dev-dependencies]
+tokio-test = "0.4.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
